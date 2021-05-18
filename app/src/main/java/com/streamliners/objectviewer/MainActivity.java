@@ -8,6 +8,7 @@ import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Toast;
 
 import com.streamliners.objectviewer.databinding.ActivityMainBinding;
 
@@ -69,8 +70,12 @@ public class MainActivity extends AppCompatActivity {
         String gender;
         if (checkBox == R.id.female)
             gender = "Female";
-        else
+        else if(checkBox==R.id.male)
             gender = "Male";
+        else {
+            Toast.makeText(this, "Select a Gender!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         String rollNo = b.rollNo.getEditText().getText().toString().trim();
         if (!rollNo.matches("\\d\\d[a-zA-Z]{4}\\d\\d\\d")) {
