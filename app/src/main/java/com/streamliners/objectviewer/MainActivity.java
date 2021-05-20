@@ -9,9 +9,12 @@ import android.os.Parcelable;
 import android.os.PersistableBundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.streamliners.objectviewer.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,8 +28,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(b.getRoot());
 
         setupHideErrorForEditText();
+
+        TextInputEditText phoneNoEt = b.phoneNoText;
+        phoneNoEt.setOnEditorActionListener(editorActionListener);
+
     }
 
+    private final TextInputEditText.OnEditorActionListener editorActionListener = new TextView.OnEditorActionListener() {
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            save(v);
+            return false;
+        }
+    };
 
     /**
      * text watcher to hide error for edit text
