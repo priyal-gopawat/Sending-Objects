@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         phoneNoEt.setOnEditorActionListener(editorActionListener);
 
     }
-
+    //adding imeOptions
     private final TextInputEditText.OnEditorActionListener editorActionListener = new TextView.OnEditorActionListener() {
         @Override
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
