@@ -1,10 +1,12 @@
 package com.streamliners.objectviewer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.os.PersistableBundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         setupHideErrorForEditText();
     }
+
 
     /**
      * text watcher to hide error for edit text
